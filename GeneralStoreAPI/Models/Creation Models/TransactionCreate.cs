@@ -10,7 +10,7 @@ namespace GeneralStoreAPI.Models.Creation_Models
     public class TransactionCreate
     {
         [Required]
-        public int? CustomerId { get; set; }
+        public int CustomerId { get; set; }
 
         [Required]
         public string ProductSKU { get; set; }

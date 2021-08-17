@@ -1,6 +1,7 @@
 ﻿using GeneralStoreAPI.Models;
 using GeneralStoreAPI.Models.Creation_Models;
 using GeneralStoreAPI.Models.Data_POCOs;
+using GeneralStoreAPI.Models.Request_Parameters;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -47,11 +48,20 @@ namespace GeneralStoreAPI.Controllers
         }
 
         // Get All Customers (GET)
-        [HttpGet]
-        public async Task<IHttpActionResult> Get()
+        [Route("api/Customer/All")]
+        public async Task<IHttpActionResult> GetAll()
         {
             List<Customer> customers = await _context.Customers.ToListAsync();
             return Ok(customers);
+        }
+
+        [HttpGet]
+        public async Task<IHttpActionResult> Get([FromUri] CustomerParameters parameters)
+        {
+            int skip = ((parameters.PageNumber < 1 ? 0 : parameters.PageNumber - 1)) * parameters.PageSize;
+            int take = parameters.PageSize;
+            var pageQuery = await _context.Customers.OrderBy(on => on.Id).Skip(skip).Take(take).ToListAsync();
+            return Ok(pageQuery);
         }
 
         // Get a Customer by its ID (GET)

@@ -14,7 +14,7 @@ namespace GeneralStoreAPI.Models.Data_POCOs
         public int Id { get; set; }
 
         [ForeignKey(nameof(Customer))]
-        public int? CustomerId { get; set; }
+        public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 
         [ForeignKey(nameof(Product))]

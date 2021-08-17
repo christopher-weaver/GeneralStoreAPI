@@ -218,6 +218,10 @@
     <Compile Include="Migrations\202108102157414_InitialMigration.Designer.cs">
       <DependentUpon>202108102157414_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108170353200_UpdatedTransaction.cs" />
+    <Compile Include="Migrations\202108170353200_UpdatedTransaction.Designer.cs">
+      <DependentUpon>202108170353200_UpdatedTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -228,6 +232,7 @@
     <Compile Include="Models\Data_POCOs\Product.cs" />
     <Compile Include="Models\Data_POCOs\Transaction.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Request Parameters\CustomerParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -324,6 +329,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202108102157414_InitialMigration.resx">
       <DependentUpon>202108102157414_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108170353200_UpdatedTransaction.resx">
+      <DependentUpon>202108170353200_UpdatedTransaction.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
